@@ -7,10 +7,8 @@ const PORT = process.env.PORT;
 connectDB()
 app.use(express.json());
 app.use('/api/users', require('./routes/userRoutes.js'))
-app.use('/api/roles', require('./routes/authRoutes.js'))
+app.use('/api/books', require('./routes/bookRoutes.js'))
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })
-
-

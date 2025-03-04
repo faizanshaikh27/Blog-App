@@ -17,12 +17,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please enter a full name']
     },
-    roles: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Role'
-        }
-    ]
+    role: {
+        type: String,
+        enum: ['admin', 'user'],
+        default: 'user'
+    }
 }, {
     timestamps: true
 })
